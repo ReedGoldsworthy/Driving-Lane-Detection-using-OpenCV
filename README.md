@@ -19,23 +19,27 @@ These can be downloaded by entering pip install opencv-python in the terminal if
 After running the program, the output frames will be stored in the `output frames` folder and joined into a video stored as `output_video.mp4`
 
 # Result
-## &emsp;&emsp;&emsp; &emsp; &emsp; &emsp; &emsp; Before &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;        &emsp; &emsp;  &emsp;    After        
 
-![ezgif com-optimize (1)](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/2fa61a80-9b6a-4002-8d68-b3d8093544e4) ![ezgif com-optimize](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/3d54c665-2b56-460f-8955-6b51527d2c23) 
+ ![ezgif com-optimize (1)](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/fa41426d-1bfd-4d47-ac89-50fc2337f2fb) ![ezgif com-optimize](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/0d570c3c-f503-4653-9855-fe83afcbcee7)
+
+
 
 # How It Works
 
 ### First, we apply a mask to all the frames of our input video. This way we can ignore the unwanted objects from the driving scene.
 
-![image](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/289e1d8c-89b7-4013-ab0a-8d7f4810259f)
+![masking](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/9fb7f5ab-0d3c-4abc-b841-8403ee7f8fe3)
+
 
 ### Next, we apply image thresholding. This assigns a pixel a black or white value depending on a certain threshold.
 
-![image](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/c98c7166-66de-4356-9d76-69fdffa0e9d6)
+![thresholding](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/f655700f-5c5d-4940-8996-19d5841a967e)
+
 
 ### Finally, we apply a [Hough Line Transformation](https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html) to detect the lane markings and draw the markings back onto the original frame
 
-![image](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/ec8a24d7-affd-4c64-ac5a-b35b26c8ed94)
+![transformation](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/7335010a-a5d3-49f1-8ce4-f82afbbf8e25)
+
 
 
 
