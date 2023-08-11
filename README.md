@@ -1,6 +1,6 @@
-# ASCII Photo Converter
+# Real-Time Lane Detection with OpenCV
 
-A python program that converts an image into ascii characters and prints to terminal
+A python program that uses OpenCV to detect the lanes on a road from a video
 
 ## Dependencies
 
@@ -9,29 +9,42 @@ These can be downloaded by entering pip install opencv-python in the terminal if
 
 ## Usage
 
-Run the program from the command line, as follows:
+1). Fill the `frames` folder with PNGs of the frames from the video you would like to run the program on.
 
-<pre>python mosaic.py &lt;image_name&gt; &lt;width&gt;
+2). run the program from the command line, as follows:
+
+<pre>python main.py 
 </pre>
 
-- The `image_name` argument should contain the path to the image for which you want to build the mosaic
-- The `width` argument should contain the width you want your image to be in the terminal
+After running the program, the output frames will be stored in the `output frames` folder and joined into a video stored as `output_video.mp4`
 
-For example:
+# Result
+## &emsp;&emsp;&emsp; &emsp; &emsp; &emsp; &emsp; Before &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;        &emsp; &emsp;  &emsp;    After        
 
-<pre>python main.py planet.jpg 120
-</pre>
+![ezgif com-optimize (1)](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/2fa61a80-9b6a-4002-8d68-b3d8093544e4) ![ezgif com-optimize](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/3d54c665-2b56-460f-8955-6b51527d2c23) 
 
-![planetFinal](https://github.com/ReedGoldsworthy/ASCII-Photo-Converter/assets/59662986/e71675b2-a8e2-4837-a75c-69effdf45da7)
+# How It Works
 
-# Gallery
+### First, we apply a mask to all the frames of our input video. This way we can ignore the unwanted objects from the driving scene.
 
-![image](https://github.com/ReedGoldsworthy/ASCII-Photo-Converter/assets/59662986/52d15075-9c3b-4afc-b391-24a80a179ddb)
+![image](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/289e1d8c-89b7-4013-ab0a-8d7f4810259f)
 
-![image](https://github.com/ReedGoldsworthy/ASCII-Photo-Converter/assets/59662986/a8fa8430-9a78-4261-aa46-d11096e9ebc8)
+### Next, we apply image thresholding. This assigns a pixel a black or white value depending on a certain threshold.
 
-![image](https://github.com/ReedGoldsworthy/ASCII-Photo-Converter/assets/59662986/547fffb9-38b1-403e-ad39-74bc53d7a635)
+![image](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/c98c7166-66de-4356-9d76-69fdffa0e9d6)
 
-![image](https://github.com/ReedGoldsworthy/ASCII-Photo-Converter/assets/59662986/41d69931-336c-4993-8fdd-a26a50ec56ac)
+### Finally, we apply a [Hough Line Transformation](https://docs.opencv.org/3.4/d9/db0/tutorial_hough_lines.html) to detect the lane markings and draw the markings back onto the original frame
 
-&nbsp;
+![image](https://github.com/ReedGoldsworthy/Driving-Lane-Detection-using-OpenCV/assets/59662986/ec8a24d7-affd-4c64-ac5a-b35b26c8ed94)
+
+
+
+
+  
+
+
+
+
+
+
+
